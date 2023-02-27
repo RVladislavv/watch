@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -289,7 +289,7 @@ header .logo h1 {
 }
 
 .quality {
-  width: 1366px;
+  max-width: 1366px;
   height: 519px;
   margin: 0 auto;
   background: linear-gradient(to right, #f7f5ef 0%, #f7f5ef 468px, #fdfdfb 468px, #fdfdfb 100%);
@@ -421,6 +421,7 @@ footer {
   margin-top: 90px;
   height: 275px;
   background: #444240;
+  max-width: 100vw;
 }
 footer .container {
   padding-top: 79px;
