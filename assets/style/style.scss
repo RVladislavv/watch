@@ -212,7 +212,7 @@ header {
     background-color: #fff;
     .container {
         width: 1170px;
-        height: 720px;
+        min-height: 720px;
 
         h3 {
             padding-top: 79px;
@@ -379,7 +379,7 @@ header {
 
 .news {
     .container {
-        width: 1171px;
+        max-width: 1171px;
         height: 460px;
         margin-top: 81px;
         display: flex;
@@ -498,5 +498,67 @@ footer {
         letter-spacing: 0.14em;
 
         color: #ffffff;
+    }
+}
+
+//от 992
+@media (max-width: 1199px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .main .container {
+        .watch__price {
+            gap: 10px;
+            p {
+                white-space: nowrap;
+            }
+        }
+        .watch__info {
+            position: absolute;
+            gap: 10px;
+        }
+    }
+
+    .popular {
+        .container {
+            width: 992px;
+            .watchs {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+    }
+
+    .quality {
+        margin-top: 81px;
+    }
+
+    .quality .container {
+        margin: 0 auto;
+    }
+
+    .quality__slider {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}
+
+//от 768px
+@media (max-width: 991px) {
+    .popular .container {
+        width: 768px;
+        .watchs {
+            justify-content: center;
+        }
+    }
+
+    .quality .container {
+        gap: 20px;
+        padding-left: 10px;
+    }
+    .news .container .news__img img {
+        max-width: 100%;
+        height: auto;
     }
 }

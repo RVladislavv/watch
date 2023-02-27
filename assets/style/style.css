@@ -204,7 +204,7 @@ header .logo h1 {
 }
 .popular .container {
   width: 1170px;
-  height: 720px;
+  min-height: 720px;
 }
 .popular .container h3 {
   padding-top: 79px;
@@ -359,7 +359,7 @@ header .logo h1 {
 }
 
 .news .container {
-  width: 1171px;
+  max-width: 1171px;
   height: 460px;
   margin-top: 81px;
   display: flex;
@@ -469,4 +469,53 @@ footer .container .footer__info .first {
   line-height: 19px;
   letter-spacing: 0.14em;
   color: #ffffff;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    padding: 0 20px;
+  }
+  .main .container .watch__price {
+    gap: 10px;
+  }
+  .main .container .watch__price p {
+    white-space: nowrap;
+  }
+  .main .container .watch__info {
+    position: absolute;
+    gap: 10px;
+  }
+  .popular .container {
+    width: 992px;
+  }
+  .popular .container .watchs {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .quality {
+    margin-top: 81px;
+  }
+  .quality .container {
+    margin: 0 auto;
+  }
+  .quality__slider {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .popular .container {
+    width: 768px;
+  }
+  .popular .container .watchs {
+    justify-content: center;
+  }
+  .quality .container {
+    gap: 20px;
+    padding-left: 10px;
+  }
+  .news .container .news__img img {
+    max-width: 100%;
+    height: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
