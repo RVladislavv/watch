@@ -9,6 +9,7 @@ $fontFamily: "Roboto";
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -21,6 +22,13 @@ body {
 .container {
     max-width: 1170px;
     margin: 0 auto;
+}
+
+.burger {
+    display: none;
+    &__menu {
+        display: none;
+    }
 }
 
 button {
@@ -95,6 +103,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__middle {
+        padding-bottom: 4px;
+    }
 }
 
 .main {
@@ -316,6 +328,9 @@ header {
         gap: 70px;
         padding-top: 52px;
         margin-left: 177px;
+        img {
+            z-index: 1;
+        }
         .quality__info {
             display: flex;
             flex-direction: column;
@@ -560,5 +575,261 @@ footer {
     .news .container .news__img img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+//от 576
+@media (max-width: 767px) {
+    .container {
+        padding: 0 5px;
+    }
+    header {
+        .container {
+            gap: 15px;
+            nav {
+                .nav__list {
+                    max-width: 350px;
+                }
+            }
+            .icons {
+                gap: 5px;
+            }
+        }
+    }
+
+    .popular .container {
+        width: 576px;
+    }
+
+    .quality {
+        .container {
+            img {
+                width: 250px;
+                height: auto;
+            }
+        }
+        &__slider {
+            margin-top: 40px;
+        }
+    }
+
+    .main .container {
+        justify-content: flex-start;
+        .info {
+            max-width: 342px;
+            align-items: flex-start;
+            .header img {
+                display: none;
+            }
+        }
+        .watch {
+            background-position: left center;
+            &__info {
+                right: 80px;
+            }
+        }
+    }
+}
+
+//от 320px
+@media (max-width: 575px) {
+    .container {
+        width: 300px;
+    }
+    .burger {
+        display: block;
+        &__menu {
+            display: block;
+        }
+    }
+
+    .nav__list {
+        display: none;
+    }
+
+    .burger__menu {
+        display: none;
+    }
+
+    .burger__menu--open {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .burger__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .burger__list li {
+        margin-bottom: 20px;
+    }
+
+    .burger__list a {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .burger__list a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .burger__button {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 999;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transition: transform 0.2s ease-out;
+            transform-origin: center;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            transition: transform 0.2s ease-out;
+            transform-origin: center;
+        }
+
+        &--open::before {
+            transform: translateY(14px) rotate(45deg);
+        }
+
+        &--open::after {
+            transform: translateY(-14px) rotate(-45deg);
+        }
+    }
+
+    .burger__line {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+    }
+
+    .burger__line--top {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .burger__line--middle {
+        opacity: 0;
+    }
+
+    .burger__line--bottom {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .burger__button--open .burger__line--top {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    .burger__button--open .burger__line--middle {
+        opacity: 0;
+    }
+
+    .burger__button--open .burger__line--bottom {
+        transform: translateY(0) rotate(-45deg);
+    }
+    .burger__line--hide {
+        display: none;
+    }
+
+    header .container {
+        justify-content: flex-start;
+    }
+
+    .main {
+        height: 400px;
+        .container {
+            padding-top: 50px;
+            .info {
+                width: 300px;
+                .header h2 {
+                    font-size: 35px;
+                }
+                button {
+                    margin-left: 50px;
+                }
+            }
+            .watch {
+                display: none;
+            }
+        }
+    }
+
+    .popular .container {
+        width: 320px;
+        overflow: hidden;
+    }
+
+    .watchs__card {
+        width: 300px;
+        padding: 0;
+    }
+
+    .quality {
+        height: auto;
+        .container {
+            flex-direction: column;
+        }
+        &__slider {
+            padding-bottom: 15px;
+        }
+    }
+
+    .news {
+        .container {
+            margin-top: 20px;
+            height: auto;
+            flex-direction: column;
+        }
+    }
+
+    footer {
+        height: auto;
+        .container {
+            flex-direction: column;
+            gap: 25px;
+            .footer__info p {
+                padding-bottom: 10px;
+            }
+        }
     }
 }
